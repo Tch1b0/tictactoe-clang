@@ -1,0 +1,17 @@
+version: "3"
+
+tasks:
+    build:
+        cmds:
+            - gcc ./source/*.c
+              -o ./out/tictactoe{{ exeExt }}
+              -I include/
+    run:
+        cmds:
+            - ./out/tictactoe{{ exeExt }}
+
+    # build and run
+    br:
+        cmds:
+            - task: build
+            - task: run
