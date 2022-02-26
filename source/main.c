@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <game.h>
 #include <utility.h>
 

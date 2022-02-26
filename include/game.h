@@ -20,5 +20,7 @@ void game_pretty_print(Game *game);
 void game_free(Game *game);
 int game_loop(Game *game);
 void game_ai_move(Game *game);
+Game *game_copy(Game *game);
+int game_count_empty_fields(Game *game);
 
 #endif

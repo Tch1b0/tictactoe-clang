@@ -17,6 +17,21 @@ Game *game_create()
     return game;
 }
 
+Game *game_copy(Game *game)
+{
+    Game *new_game = game_create();
+    new_game->over = game->over;
+    for (int y = 0; y <= 2; y++)
+    {
+        for (int x = 0; x <= 2; x++)
+        {
+            new_game->field[y][x] = game->field[y][x];
+        }
+    }
+
+    return new_game;
+}
+
 void game_place_entity(Game *game, int entity, int x, int y)
 {
     if (game->field[y][x] == FIELD_EMPTY)
@@ -39,6 +54,21 @@ void game_pretty_print(Game *game)
     printf("|  %c|%c|%c\n", int_to_sign(game->field[1][0]), int_to_sign(game->field[1][1]), int_to_sign(game->field[1][2]));
     printf("  -------\n");
     printf("   %c|%c|%c\n", int_to_sign(game->field[2][0]), int_to_sign(game->field[2][1]), int_to_sign(game->field[2][2]));
+}
+
+int game_count_empty_fields(Game *game)
+{
+    int count = 0;
+    for (int y = 0; y <= 2; y++)
+    {
+        for (int x = 0; x <= 2; x++)
+        {
+            if (game->field[y][x] == FIELD_EMPTY)
+                count++;
+        }
+    }
+
+    return count;
 }
 
 void game_free(Game *game)
