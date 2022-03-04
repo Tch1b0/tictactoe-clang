@@ -17,7 +17,5 @@ int prompt(char *question)
 
 int bounds_valid(int value, int lower_bound, int upper_bound)
 {
-    return (value >= lower_bound && value <= upper_bound)
-               ? 1
-               : 0;
+    return value >= lower_bound && value <= upper_bound;
 }
