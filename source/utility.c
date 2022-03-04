@@ -3,9 +3,7 @@
 
 char int_to_sign(int num)
 {
-    //            SPACE                X    O
-    //                |                |    |
-    return num == 0 ? 32 : (num == 1 ? 88 : 79);
+    return num == 0 ? ' ' : (num == 1 ? 'X' : 'O');
 }
 
 // Prompt the User to enter a number
